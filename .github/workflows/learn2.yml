@@ -3,8 +3,18 @@ on:
  push:
     branches:
       - production
+
+env:
+  ASERVER: production
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ~/aaa/
+
 jobs:
   testrun2:
     runs-on: cayalinux
     steps:
       - run: uptime
+      - run: echo $ASERVER > ./test
