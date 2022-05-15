@@ -1,0 +1,8 @@
+name: learn-github-actions
+on: [push]
+jobs:
+  testrun:
+    runs-on: self-hosted
+    steps:
+      - run: uptime
+      - run: echo '123' > ~/test
