@@ -4,5 +4,9 @@ jobs:
   testrun:
     runs-on: self-hosted
     steps:
-      - run: uptime
-      - run: echo '123' > ~/test
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v
