@@ -13,13 +13,17 @@ defaults:
 
 jobs:
   testrun3:
+    name: testrun3
     runs-on: cayalinux
-    container:
-      image: node:14.16
-      env:
-        NODE_ENV: development
-      ports:
-        - 80
-      volumes:
-        - my_docker_volume:/volume_mount
-      options: --cpus 1
+    steps:
+    - name: Check out the repo
+      uses: actions/checkout@v2
+    - name: Run the build process with Docker
+      uses: addnab/docker-run-action@v3
+      with:
+          image: aschmelyun/cleaver:latest
+          options: -v ${{ github.workspace }}:/var/www
+          run: |
+              composer install
+              npm install
+              npm run production
