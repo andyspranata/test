@@ -10,7 +10,7 @@ env:
 defaults:
   run:
     shell: bash
-    working-directory: ~/aaa/
+    working-directory: /home/andy.pranata/aaa/
 
 jobs:
   testrun2:
