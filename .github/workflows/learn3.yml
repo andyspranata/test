@@ -18,8 +18,10 @@ jobs:
       uses: addnab/docker-run-action@v3
       with:
           image: aschmelyun/cleaver:latest
-          options: -v ./www:/var/www
+          options: |
+            -v ./www:/var/www
+            --workdir /var/www
           run: |
-              composer install
-              npm install
-              npm run production
+            composer install
+            npm install
+            npm run production
