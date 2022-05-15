@@ -7,10 +7,6 @@ on:
 env:
   ASERVER: production
 
-defaults:
-  run:
-    working-directory: /home/andy.pranata/aaa/
-
 jobs:
   testrun3:
     name: testrun3
