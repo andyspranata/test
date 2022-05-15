@@ -1,0 +1,10 @@
+name: learn2
+on: 
+ push:
+    branches:
+      - production
+jobs:
+  testrun2:
+    runs-on: cayalinux
+    steps:
+      - run: uptime
